@@ -1,7 +1,11 @@
 from twilio.rest import Client
+from twilio.base.exceptions import TwilioRestException
 
+# Twilio credentials
 account_sid = 'AC4fbfb996bb846c43c234c28f2429cd37'
 auth_token = '18180a51b85af7ffba92000255c661b0'
+
+# Twilio phone number
 twilio_phone_number = '+14793780765'
 
 # The recipient's phone number
@@ -13,11 +17,15 @@ twiml_url = 'https://handler.twilio.com/twiml/EH31d7b98052a5d336dbc4b3d6b0589bd1
 # Initialize the Twilio client
 client = Client(account_sid, auth_token)
 
-# Make the call
-call = client.calls.create(
-    to=to_phone_number,
-    from_=twilio_phone_number,
-    url=twiml_url
-)
-
-print(f"Call initiated with SID: {call.sid}")
+try:
+    # Make the call
+    call = client.calls.create(
+        to=to_phone_number,
+        from_=twilio_phone_number,
+        url=twiml_url
+    )
+    print(f"Call initiated with SID: {call.sid}")
+except TwilioRestException as e:
+    print(f"Twilio error occurred: {e}")
+except Exception as e:
+    print(f"An error occurred: {e}")
