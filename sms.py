@@ -2,12 +2,12 @@ from twilio.rest import Client
 from twilio.base.exceptions import TwilioRestException
 
 # Twilio credentials
-account_sid = 'AC4fbfb996bb846c43c234c28f2429cd37'
-auth_token = '18180a51b85af7ffba92000255c661b0'
-twilio_phone_number = '+14793780765'
+account_sid = 'ACfcbf372bdfa7dc6abf6d613cc4d63acc'
+auth_token = 'f98e0cbfbf82a957ea1011677b4ff93b'
+twilio_phone_number = '+15734636566'
 
 # Your phone number (the recipient)
-to_phone_number = '+918150943182'
+to_phone_number = '+918317361040'
 
 # Message to send
 message_body = 'I am in danger, I need help'
