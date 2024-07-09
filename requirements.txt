@@ -2,4 +2,4 @@
 geopy
 Flask==2.0.1
 gunicorn==20.1.0
-twilio==7.18.0
+twilio==9.2.3
